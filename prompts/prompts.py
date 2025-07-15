@@ -47,11 +47,11 @@ The domain is marketing or e-commerce, focusing on customer transactions.
 
 I am avoiding any words that appear in the original column or table name or their descriptions such as customer, so I will propose:
  
- consumer_identifier, user_identifier, shopper_key, buyer_token, transaction_participant_id
+ consumer_identifier, user_profile_identifier, shopper_key, buyer_token, transaction_participant_id, participant_id
 
 3. **Reflect and select and rank the most relevant names:**
 
-user_profile_identifier and transaction_participant_id are too long or abstract.
+user_profile_identifier, participant_id and transaction_participant_id are too long or abstract.
 
 I will select these three ranked names: consumer_identifier, shopper_key, buyer_token
 
@@ -142,43 +142,6 @@ TABLE_SELECTION = [{
         }
     """
 }]
-
-
-
-
-
-RANKING_PROMPT_OLD = [
-    {"role": "system", "content": """
-You are tasked with thoroughly evaluating and scoring column candidates for a given query column based on their relevance, while also considering data types. Your goal is to rank candidates and select the top 5 most suitable ones.
-"""}, 
-    {"role": "user", "content": """
-**Instructions:**
-
-1. **Analyze Query and Each Candidate:**
-   - Conduct a detailed analysis of the query column and each candidate column using their metadata.
-
-2. **Strict Scoring Criteria:**
-   - **Domain-Specific Table Names:** Deprioritize candidates with generic, non-domain-specific table names (e.g., MAN, SUPPLIER).
-   - **Analytical Comparison:** Compare the table names and descriptions between the query table and candidate tables.
-   - **Close Match Considerations:**
-      - Prefer columns with compatible data types to the query column for effective data comparison and analysis.
-
-3. **Candidate Ranking:**
-   - Rank all candidates based on evaluations considering table granularity alignment and data types.
-   - Select the top 5 candidates from the ranked list to ensure suitability.
-
-4. **Explanations:**
-   - Provide detailed explanations for each step and sub-step in the process.
-   - Clarify your reasoning for the ranking order of columns, especially for the top 5 selections.
-
-5. **Output Formatting:**
-   - Format the ranking output as JSON, listing only the indices of the top 5 ranked columns under the key "selected_columns."
-   - Present explanations separately, outside of the JSON format.
-"""}, 
-    {"role": "assistant", "content": """
-Great! I can help you with that. Please provide the query column information and the candidate columns you would like to evaluate.
-"""}
-]
 
 
 
