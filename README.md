@@ -38,7 +38,7 @@ Follow these steps to prepare your development environment:
 
 - The raw data used in our paper is provided at the following link:
 
-  > *(Insert link here)*
+  > *(https://drive.google.com/drive/folders/1w7mx55ExgEdm-4cIrSckFLRqbOMzr9xG?usp=drive_link)*
 
 - Download and save it under the `schemora/` directory.
 
@@ -101,4 +101,11 @@ Follow these steps to prepare your development environment:
     ```bash
     python scripts/batch_evaluation.py
     ```
+
+## FAQ
+
+1. **Can I access the experiments shared in the paper?**
+
+   Yes. All experiments and their results are available at the following link:  
+   [Google Drive Folder](https://drive.google.com/drive/folders/1w7mx55ExgEdm-4cIrSckFLRqbOMzr9xG?usp=drive_link)
 
