@@ -22,8 +22,13 @@ Follow these steps to prepare your development environment:
     pip install -r requirements.txt
     ```
 
+    ```bash
+    export PYTHONPATH=.:$PYTHONPATH
+    ```
+
 3. **Set up OpenAI credentials**
    Create a `.env` file and save your OpenAI API key there.
+   
 
 ---
 
