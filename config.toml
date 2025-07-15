@@ -1,0 +1,43 @@
+[experiment]
+
+overwrite = false
+n_candidates = 2
+
+[data]
+
+benchmark_name = "mimic-omop"
+
+[embedding]
+
+[embedding.client]
+#type="local"
+type="openai"
+
+
+[embedding.client.args]
+nthreads=10
+#model_name="all-mpnet-base-v2"
+model_name="text-embedding-ada-002"
+#model_name="text-embedding-3-large"
+#model_name="text-embedding-3-small"
+
+
+[llm]
+
+[llm.client]
+type = 'openai'
+#type = "azureopenai"
+
+[llm.client.args]
+nthreads=10
+
+#model_name="gpt-4.1"
+#model_name="gpt-4o"
+model_name="gpt-4.1-2025-04-14"
+
+#url="https://gpt-qa-swn.openai.azure.com/"
+#api_version="2024-02-15-preview"
+#model_name="gpt-qa-swn-4o"
+
+
+

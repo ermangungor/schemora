@@ -1,0 +1,29 @@
+[experiment]
+overwrite = false
+n_candidates = 3
+query_enrichment = true
+document_enrichment = true
+non_sim_prompt = true
+embedding_search = true
+full_text_search = true
+table_selection = true
+
+[data]
+benchmark_name = "synthea-omop"
+run_only_for_annotated = true  # whether to run only for source columns that have a matching column
+
+
+[embedding.client]
+#type = "local"
+type = "openai"
+
+[llm.client]
+type = "openai"
+
+[embedding.client.args]
+nthreads = 1
+model_name = "text-embedding-3-large"
+
+[llm.client.args]
+nthreads = 10
+model_name = "gpt-4.1-2025-04-14"
